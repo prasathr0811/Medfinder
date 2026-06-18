@@ -1,6 +1,12 @@
 # 🩺 MedFinder — Smart Medicine Stock Locator & Reservation Platform
 
 <p align="center">
+  <a href="https://medfinder-m.vercel.app/">
+    <img src="https://img.shields.io/badge/Live_Demo-medfinder--m.vercel.app-4f46e5?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
+  </a>
+</p>
+
+<p align="center">
   <a href="https://github.com/prasathr0811/Medfinder">
     <img src="https://img.shields.io/github/stars/prasathr0811/Medfinder?style=social" alt="Stars" />
   </a>
