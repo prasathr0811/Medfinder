@@ -182,7 +182,7 @@ const RegisterPharmacy = () => {
                 <label className="font-semibold text-slate-400 uppercase tracking-wider">Longitude</label>
                 <input
                   type="number"
-                  step="0.000001"
+                  step="any"
                   placeholder="77.5946"
                   {...register('longitude', { required: 'Longitude is required' })}
                   className="w-full rounded-xl border p-3 focus:outline-none dark:bg-slate-900 dark:border-slate-800"
@@ -194,7 +194,7 @@ const RegisterPharmacy = () => {
                 <label className="font-semibold text-slate-400 uppercase tracking-wider">Latitude</label>
                 <input
                   type="number"
-                  step="0.000001"
+                  step="any"
                   placeholder="12.9716"
                   {...register('latitude', { required: 'Latitude is required' })}
                   className="w-full rounded-xl border p-3 focus:outline-none dark:bg-slate-900 dark:border-slate-800"
