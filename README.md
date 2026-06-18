@@ -1,76 +1,147 @@
-# 🩺 MedFinder — Smart Medicine Stock Locator
+# 🩺 MedFinder — Smart Medicine Stock Locator & Reservation Platform
 
 <p align="center">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node" />
-  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express" />
-  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
-  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
+  <a href="https://github.com/prasathr0811/Medfinder">
+    <img src="https://img.shields.io/github/stars/prasathr0811/Medfinder?style=social" alt="Stars" />
+  </a>
+  <a href="https://github.com/prasathr0811/Medfinder/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/prasathr0811/Medfinder?style=flat-square" alt="License" />
+  </a>
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node" />
+  <img src="https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white" alt="Express" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind" />
 </p>
 
-MedFinder is a premium, real-time medicine availability search and reservation platform. It bridges the gap between local pharmacies and customers, letting users search for medicines, see exact local distances (e.g., 50m, 100m, 10m), and reserve stocks instantly.
+---
+
+## 📖 Introduction
+
+**MedFinder** is a modern, real-time medicine availability search and reservation platform. It bridges the gap between local pharmacies and customers, letting users search for medicines, compare prices, view pharmacy details with realistic local distances, and reserve stocks instantly.
+
+---
+
+## 🗺️ Table of Contents
+
+1. [Key Features](#-key-features)
+2. [Tech Stack](#-tech-stack)
+3. [System Architecture](#-system-architecture)
+4. [Local Installation](#-local-installation)
+5. [API Routes](#-api-routes)
+6. [Deployment Details](#-deployment-details)
 
 ---
 
 ## 🌟 Key Features
 
-### 👤 Customer Experience
-* **🔍 Smart Search Engine:** Instantly search medicines by name, chemical composition, category, or manufacturer.
-* **📍 Geolocation Mapping:** Automatically detects user coordinates to display pharmacies near Chennai (Adyar, Tambaram, etc.) with real distances.
-* **🛡️ Secure Online Reservations:** Lock in your medicine stock instantly. Shows a success ticket inside the modal upon completion.
+### 👤 Customer Features
+* **🔍 Smart Search Engine:** Instant, case-insensitive search by name, composition, category, or manufacturer.
+* **📍 Geolocation Mapping:** Automatically maps realistic local distances (e.g., 50m, 100m, 10m) from the user's location to partner Chennai pharmacies.
+* **🛡️ Secure Online Reservations:** Lock in your medicine stock instantly. Shows a success ticket with details inside the modal upon completion.
 * **📱 Verification QR Codes:** Displays a secure counter verification QR code for instant pickup.
-* **📄 PDF Receipt Downloads:** Download structured PDF invoices directly from the browser.
+* **📄 PDF Invoices:** Generate and download structured PDF receipts directly from the web application.
 
 ### 💼 Pharmacy Owner Portal
 * **📈 Stats Dashboard:** Monitor active orders, inventory levels, and overall sales analytics.
-* **📦 Stock Control Manager:** Add, edit, or delete items. Features a **File Upload** option to select and display real medicine images.
+* **📦 Inventory Manager:** Add, edit, or delete items. Features a **File Upload** option to select and display real medicine images.
 * **📋 Reservation Handler:** Confirm, set to "ready for pickup", or collect reservation orders in real-time.
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **Frontend:** React, Tailwind CSS, Vite, TanStack Query, Framer Motion, Lucide Icons, React Hook Form
-* **Backend:** Node.js, Express.js, JWT Auth, QRCode generator, PDFKit
-* **Database:** MongoDB, Mongoose ODM
+| Frontend | Backend | Database & Deploy |
+|---|---|---|
+| • React (Vite) | • Node.js | • MongoDB (Atlas) |
+| • Tailwind CSS | • Express.js | • Vercel (Frontend) |
+| • TanStack Query | • JWT Auth | • Render (Backend) |
+| • Framer Motion | • PDFKit & QRCode | |
 
 ---
 
-## ⚙️ Local Setup Instructions
+## ⚙️ Local Installation
 
-### 1. Backend Configuration
-Navigate to the `backend` folder, create a `.env` file, and configure the variables:
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_jwt_key
-NODE_ENV=development
+### 1. Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) and [MongoDB](https://www.mongodb.com/) installed locally.
+
+### 2. Clone the Repository
+```bash
+git clone https://github.com/prasathr0811/Medfinder.git
+cd Medfinder
 ```
 
-### 2. Frontend Configuration
-Navigate to the `frontend` folder, create a `.env` file, and add:
+### 3. Backend Setup
+Create a `.env` file in the `backend` directory:
+```env
+PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/medfinder
+JWT_SECRET=your_jwt_secret_key
+NODE_ENV=development
+```
+Install backend dependencies:
+```bash
+cd backend
+npm install
+```
+
+### 4. Frontend Setup
+Create a `.env` file in the `frontend` directory:
 ```env
 VITE_API_BASE_URL=http://localhost:5000/api
 ```
-
-### 3. Run Development Servers
-In the root directory, run:
+Install frontend dependencies:
 ```bash
-# Install dependencies for all directories
-npm run install:all
+cd ../frontend
+npm install
+```
 
-# Seed initial database records
+### 5. Seeding & Running
+Go to the root folder and run:
+```bash
+# Seed initial Chennai pharmacies and medicines
 npm run seed
 
-# Start both frontend and backend concurrently
+# Run both frontend & backend concurrently
 npm run dev
 ```
 
 ---
 
-## 🚀 Deployment
+## 📡 API Routes
 
-* **Backend:** Deploy `backend` root on **Render.com** (as a Web Service) with env variables `MONGO_URI`, `JWT_SECRET`, `NODE_ENV=production`.
-* **Frontend:** Deploy `frontend` root on **Vercel** with env variable `VITE_API_BASE_URL` pointing to your Render backend API.
+### Authentication
+* `POST /api/auth/register` - Register a new user (Customer/Owner)
+* `POST /api/auth/login` - Authenticate user & get token
+
+### Medicines & Pharmacy
+* `GET /api/medicines` - Search and filter medicines with location coordinates
+* `GET /api/medicines/:id` - Get single medicine details
+* `POST /api/medicines/pharmacy` - Register pharmacy profile (Owner)
+* `POST /api/medicines` - Add medicine to inventory (Owner)
+* `PUT /api/medicines/:id` - Update inventory listing (Owner)
+* `DELETE /api/medicines/:id` - Delete inventory listing (Owner)
+
+### Reservations
+* `POST /api/reservations` - Create a medicine reservation (Customer)
+* `GET /api/reservations/customer` - Get all reservations for logged-in customer
+* `GET /api/reservations/pharmacy` - Get all reservations for pharmacy (Owner)
+* `PATCH /api/reservations/:id/status` - Update reservation status (Cancel/Confirm/Ready/Collected)
+* `GET /api/reservations/:id/receipt` - Download PDF receipt
+
+---
+
+## 🚀 Deployment Details
+
+### Backend (Render)
+* **Root Directory:** `backend`
+* **Build Command:** `npm install`
+* **Start Command:** `node server.js`
+* **Env Variables Required:** `MONGO_URI`, `JWT_SECRET`, `NODE_ENV=production`
+
+### Frontend (Vercel)
+* **Root Directory:** `frontend`
+* **Build Command:** `npm run build`
+* **Output Directory:** `dist`
+* **Env Variables Required:** `VITE_API_BASE_URL=https://your-backend.onrender.com/api`
